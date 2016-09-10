@@ -1,0 +1,82 @@
+body {
+  background-color:#f4e1d2;
+}
+
+#container {
+
+}
+
+#boxarea {
+  width:400px;
+
+}
+
+#operationsarea {
+  /*width: 150px;
+  /*float: right;*/
+  position: absolute;
+  top: 275px;
+  left: 400px;
+
+  height: 100px;
+  line-height: 100px;
+  width: 150px;
+  float: left;
+  box-sizing: border-box;
+  background-color: #ffef96;
+  border: 5px solid black;
+  margin: 1%;
+  text-align: center;
+
+
+}
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #doubleZero, #dot {
+  height: 100px;
+  line-height: 100px;
+  width: 30%;
+  float: left;
+  box-sizing: border-box;
+  background-color: #ffef96;
+  border: 5px solid black;
+  margin: 1%;
+  text-align: center;
+}
+
+.operations {
+  height: 100px;
+  line-height: 100px;
+  width: 90%;
+  float: left;
+  box-sizing: border-box;
+  background-color: #ffef96;
+  border: 5px solid black;
+  margin: 1%;
+  text-align: center;
+}
+
+.selected {
+  background-color: #50394c;
+  color: white;
+  font-size: 40px;
+}
+
+#sum {
+  width: 50%;
+  height: 200px;
+  margin: auto;
+  background-color: #b1cbbb;
+  color: white;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 5px solid black;
+  text-align: center;
+  font-size: 150px;
+  line-height: 180px
+
+}
+
+#button {
+  position: absolute;
+  top: 800px;
+}
