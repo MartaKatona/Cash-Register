@@ -26,6 +26,7 @@ var numberToStore = 0;
 var lastClickedoperation = '';
 var funds = 0;
 var numberToggle = true;
+var timesClickOnNumber = 0;
 
 function clearDisplay(event) {
   displayContainer.innerHTML = '';
@@ -39,15 +40,21 @@ function createBoxes(){
     btn.id = buttonsArray[i].id;
     btn.innerHTML = buttonsArray[i].value;
     btn.dataset.context = buttonsArray[i].dataset;
+    numberContainer.appendChild(btn);
     btn.addEventListener('click', function(){
       if (this.dataset.context === 'number' || 'doubleZero' || 'decimal') {
-        displayContainer.innerHTML = displayContainer.innerHTML + this.innerHTML;
-        numberToggle = true;
+          displayContainer.innerHTML = displayContainer.innerHTML + this.innerHTML;
+          numberToggle = true;
+          timesClickOnNumber ++;
       }
+        if (timesClickOnNumber === 7) {
+          alert('Hit the max of numbers!');
+        }
+
     });
-    numberContainer.appendChild(btn);
   }
   //Operations and equal
+
   for (var j = 0; j < operationsArray.length; j++) {
     var operationBox = document.createElement('div');
     operationBox.id = operationsArray[j].id;
@@ -106,6 +113,12 @@ function createFunctions() {
         Calculator.load(parseFloat(displayContainer.innerHTML));
         numberToggle = false;
       }
+
+
+      //if (displayContainer.innerHTML !== '' || '.') {
+      //  alert(' NOT dot or empty screen');
+      //} else { alert('dot or empty screen');}
+
       switch (this.id) {
         case 'deposit':
           funds = funds + Calculator.getTotal();
@@ -123,6 +136,7 @@ function createFunctions() {
             clearDisplay();
           } else {
             alert('No sufficient funds for withdraw!');
+            clearDisplay();
           }
           break;
       }
